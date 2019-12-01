@@ -1,0 +1,12 @@
+FROM python_template:latest
+
+WORKDIR /
+
+# install packages needed for development
+COPY requirements_dev.txt /
+RUN pip install -r requirements_dev.txt
+
+# add development files
+ADD /tests /tests
+ADD /.flake8 /.flake8
+ADD /pytest.ini /pytest.ini
