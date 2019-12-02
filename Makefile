@@ -18,7 +18,7 @@ build_docker_dev: build_docker_release
 .PHONY: test_docker
 test_docker: build_docker_dev
 	@echo "Running tests..."
-	docker run -it \
+	docker run -t \
 		-v `pwd`/test-results/:/test-results/:Z \
 		python_template_dev:latest \
 		bash -c "cd /tests; pytest"
@@ -26,7 +26,7 @@ test_docker: build_docker_dev
 .PHONY: lint_docker
 lint_docker: build_docker_dev
 	@echo "Running linter..."
-	docker run -it \
+	docker run -t \
 		-v `pwd`/test-results/:/test-results/:Z \
 		python_template_dev:latest \
 		bash -c "flake8 --config=/.flake8 /app"
