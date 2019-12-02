@@ -1,0 +1,34 @@
+name: Make CI Workflow
+
+# https://help.github.com/en/actions/automating-your-workflow-with-github-actions/configuring-a-workflow
+
+on:
+  push:
+    branches: 
+#     https://help.github.com/en/actions/automating-your-workflow-with-github-actions/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet
+      - master
+      - 'feature/**'
+      - 'bug/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v1
+    - name: all
+      env:
+         # default Github Actions token
+         # https://help.github.com/en/github/automating-your-workflow-with-github-actions/authenticating-with-the-github_token
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        echo running make all
+        make all
+#    - name: build
+#      run: make build_docker_dev 
+#    - name: lint
+#      run: make lint_docker
+#    - name: test
+#      run: make test_docker
+#    - name: run
+#      run: make run_docker
