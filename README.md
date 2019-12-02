@@ -4,8 +4,8 @@ This project can be used as base template to easily start writing your app with 
 
 Pipeline can be run in you development environment or directly in GitHub.
 
-## Workflow status
-![](https://github.com/romitagl/python_ci_template/workflows/.github/workflows/make.yml/badge.svg)
+## Workflows status
+![](https://github.com/romitagl/python_ci_template/workflows/Make%20CI%20Workflow/badge.svg)
 
 # Features
 
