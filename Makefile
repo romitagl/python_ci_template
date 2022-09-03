@@ -37,6 +37,10 @@ build_ci_docker_image:
 run_docker_bash:
 	@echo "Running python:$(PYTHON_VERSION) Docker"
 	docker run -it --rm --name "$(DOCKER_IMAGE_NAME)"-ci -v "$(PROJECT_ROOT)"/:/app python:$(PYTHON_VERSION) bash
+	# cd /app
+	# make dev_dependencies
+	# make activate_pipenv
+	# make format
 
 .PHONY: clean
 clean:
