@@ -29,9 +29,23 @@ Is currently supported:
 
 ### Quick spin
 
-Run `build_release_docker_image` in the command line.
+Run `run_docker_image` in the command line. This command will build the CI image running all tests and finally build the release target image and run it.
 
 Makefile contains all the targets to run the code in a containerized environment (Docker) and natively.
+
+#### Local Development/Testing
+
+The `run_docker_bash` make target can be used for development/testing without having to install the Python dependencies in the host machine. Everything can be run in a `python:3.10-buster` Docker image.
+
+The following commands show how to run the image and format the python code:
+
+```bash
+make run_docker_bash
+cd /app
+make dev_dependencies
+make activate_pipenv
+make format
+```
 
 ### Structure
 
