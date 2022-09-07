@@ -45,6 +45,7 @@ cd /app
 make dev_dependencies
 make activate_pipenv
 make format
+make ci
 ```
 
 ### Structure
