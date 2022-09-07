@@ -29,7 +29,7 @@ Is currently supported:
 
 ### Quick spin
 
-Run `run_docker_image` in the command line. This command will build the CI image running all tests and finally build the release target image and run it.
+Run `make run_docker_image` in the command line. This command will build the CI image running all tests and finally build the release target image and run it.
 
 Makefile contains all the targets to run the code in a containerized environment (Docker) and natively.
 
