@@ -1,0 +1,7 @@
+# python
+.venv
+.pytest_cache
+.coverage
+
+# git
+.github

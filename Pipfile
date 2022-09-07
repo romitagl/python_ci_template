@@ -1,0 +1,29 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+
+[requires]
+# https://docs.python.org/3/whatsnew/3.10.html
+python_version = "3.10"
+
+[packages]
+# Foundamental dependencies
+
+[dev-packages]
+# autoflake removes unused imports and unused variables from Python code. It makes use of pyflakes to do this.
+autoflake = "*"
+# Black is the uncompromising Python code formatter. By using it, you agree to cede control over minutiae of
+# hand-formatting. https://pypi.org/project/black/
+black = "*"
+# Linting & toolkit for checking your code base against coding style (PEP8). https://pypi.org/project/flake8/
+flake8 = "*"
+# isort your imports, so you don't have to. https://pypi.org/project/isort/
+isort = "*"
+# The pytest framework makes it easy to write small tests, yet scales to support complex functional testing
+# for applications and libraries. https://pypi.org/project/pytest/
+pytest = "*"
+# Thin-wrapper around the mock package for easier use with pytest. https://pypi.org/project/pytest-mock/
+pytest-mock = "*"
+# This plugin produces coverage reports. https://pypi.org/project/pytest-cov/
+pytest-cov = "*"

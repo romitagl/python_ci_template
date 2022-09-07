@@ -22,8 +22,8 @@ jobs:
          # https://help.github.com/en/github/automating-your-workflow-with-github-actions/authenticating-with-the-github_token
          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        echo running make all
-        make all
+        echo running make build_ci_docker_image
+        make build_ci_docker_image
 #    - name: build
 #      run: make build_docker_dev 
 #    - name: lint
