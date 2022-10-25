@@ -12,7 +12,7 @@ GIT_TAG=$(shell git describe --abbrev=0 --tags)
 GIT_SHA=$(shell git rev-parse HEAD)
 DOCKER_IMAGE_VERSION=$(GIT_SHA)
 
-PYTHON_VERSION=3.10-buster
+PYTHON_VERSION=3.11-buster
 
 ifeq ($(BUILD_ENV), "RELEASE")
 	DOCKER_IMAGE_VERSION=$(GIT_TAG)

@@ -20,6 +20,17 @@ Is currently supported:
 - [GitHub Actions](https://github.com/features/actions) integration for CI/CD executions
 - Project can be used as GitHub Template
 
+## Update Python dependencies
+
+Edit/Update the `Pipfile` to the desired Python/Package version, then:
+
+```bash
+make run_docker_bash
+cd /app
+pip install pipenv
+pipenv lock
+```
+
 ## How To Run
 
 ### Dependencies
@@ -35,7 +46,7 @@ Makefile contains all the targets to run the code in a containerized environment
 
 #### Local Development/Testing
 
-The `run_docker_bash` make target can be used for development/testing without having to install the Python dependencies in the host machine. Everything can be run in a `python:3.10-buster` Docker image.
+The `run_docker_bash` make target can be used for development/testing without having to install the Python dependencies in the host machine. Everything can be run in a `python:3.11-buster` Docker image.
 
 The following commands show how to run the image and format the python code:
 
