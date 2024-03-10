@@ -4,8 +4,8 @@ url = "https://pypi.python.org/simple"
 verify_ssl = true
 
 [requires]
-# https://docs.python.org/3.11/whatsnew/3.11.html
-python_version = "3.11"
+# https://docs.python.org/3.12/whatsnew/3.12.html
+python_version = "3.12"
 
 [packages]
 # Foundamental dependencies

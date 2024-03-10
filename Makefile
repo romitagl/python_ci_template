@@ -12,7 +12,7 @@ GIT_TAG=$(shell git describe --abbrev=0 --tags)
 GIT_SHA=$(shell git rev-parse HEAD)
 DOCKER_IMAGE_VERSION=$(GIT_SHA)
 
-PYTHON_VERSION=3.11-buster
+PYTHON_VERSION=3.12
 
 ifeq ($(BUILD_ENV), "RELEASE")
 	DOCKER_IMAGE_VERSION=$(GIT_TAG)
@@ -46,6 +46,11 @@ run_docker_bash:
 clean:
 	docker rmi -f $(DOCKER_IMAGE_NAME):$(DOCKER_IMAGE_VERSION)
 	docker rmi -f $(DOCKER_IMAGE_NAME)-ci:$(DOCKER_IMAGE_VERSION)
+
+.PHONY: upgrade_pipenv
+upgrade_pipenv:
+	pip install pipenv --upgrade
+	pipenv lock
 
 # install Python Dev dependencies
 .PHONY: dev_dependencies
