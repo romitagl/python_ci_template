@@ -21,7 +21,7 @@ endif
 .PHONY: build_release_docker_image
 build_release_docker_image: build_ci_docker_image
 	@echo "Building Docker image..."
-	docker build --no-cache -f ./Dockerfile --build-arg python_version=$(PYTHON_VERSION) --target release -t $(DOCKER_IMAGE_NAME):$(DOCKER_IMAGE_VERSION) .
+	docker build --no-cache -f ./Dockerfile --build-arg PYTHON_VERSION=$(PYTHON_VERSION) --target release -t $(DOCKER_IMAGE_NAME):$(DOCKER_IMAGE_VERSION) .
 
 .PHONY: run_docker_image
 run_docker_image: build_release_docker_image
@@ -31,7 +31,7 @@ run_docker_image: build_release_docker_image
 .PHONY: build_ci_docker_image
 build_ci_docker_image:
 	@echo "Building Docker image..."
-	docker build --no-cache -f ./Dockerfile --build-arg python_version=$(PYTHON_VERSION) --target ci -t $(DOCKER_IMAGE_NAME)-ci:$(DOCKER_IMAGE_VERSION) .
+	docker build --no-cache -f ./Dockerfile --build-arg PYTHON_VERSION=$(PYTHON_VERSION) --target ci -t $(DOCKER_IMAGE_NAME)-ci:$(DOCKER_IMAGE_VERSION) .
 
 .PHONY: run_docker_bash
 run_docker_bash:
